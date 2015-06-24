@@ -1,0 +1,54 @@
+<header id="header">
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#/">
+          <img alt="Brand" src="./assets/images/logo.png">
+        </a>
+      </div>
+    <div class="nav navbar-nav navbar-right">
+        <span ng-controller="MeCtrl">Welcome {{ user.first_name }}!</span>
+        <a class="btn btn-default navbar-btn" href="#user">User</a>
+        <a class="btn btn-default navbar-btn" href="#messages">Message</a>
+    </div>
+    </div>
+  </nav>
+</header>
+
+<div class="table-contain container-fuild" ng-controller="UserListCtrl">
+    <div class="container table-body">
+    <h1>Users</h1>
+    <div class="panel panel-default">
+
+      <!-- Table -->
+      <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Email</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Created Date</th>
+                <th>Send Message</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="user in users">
+                <td>{{ user.email }}</td>
+                <td>{{ user.first_name }}</td>
+                <td>{{ user.last_name }}</td>
+                <td>{{ user.created | date:'yyyy-MM-dd HH:mm:ss Z' }}</td>
+                <td>
+                  <a href="#/message/send/{{user.id}}" ng-if="user.id != curUser.id">Send Message</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <pagination 
+      ng-model="currentPage"
+      total-items="user.length"
+      max-size="maxSize"  
+      boundary-links="true">
+    </pagination>
+    </div>
+  </div>
+</div>

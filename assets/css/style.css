@@ -1,0 +1,113 @@
+/*
+Author: Bal Krishna
+Author URI: http://balkrishnasunuwar.com.np
+Description: 
+License: Proprietory
+License URI: 
+Tags: 
+*/
+
+#header a.navbar-brand{
+	padding: 4px 0;
+	margin: 0;
+}
+
+.signin .container{
+	text-align: center;
+}
+
+
+/* ********************************************************
+   +++++++++++ Login Form +++++++++++++++++++++++++++++++++
+   ********************************************************
+*/
+
+.login-form{
+	margin-bottom: 3%;
+}
+.login-form form, .signup-form form{
+	text-align: left;
+}
+
+.login-form form{ 
+	margin-left: auto;
+	margin-right: auto;
+	background: #efeff0;
+	padding: 30px;
+	border-radius: 5px;
+	-webkit-box-shadow: inset 0px 0px 69px 14px rgba(231,231,232,1);
+	-moz-box-shadow: inset 0px 0px 69px 14px rgba(231,231,232,1);
+	box-shadow: inset 0px 0px 69px 14px rgba(231,231,232,1);
+}
+
+.input-group-addon.glyphicon{
+	top: 0;
+}
+
+.login{
+	margin-bottom: 3%;
+}
+
+.login-form .input-group{
+	margin-bottom: 10px;
+}
+
+.login-form [type="checkbox"]{
+	margin-right: 5px;
+	padding: 2px;
+}
+
+.login-form [type="button"]{
+	background: #EAEAEC;
+}
+
+
+/*	***********************************************************
+	++++++++++++++++++ Sign Up Form Style +++++++++++++++++++++
+	***********************************************************
+*/
+
+
+
+/*	*************************************************************
+	+++++++++++++++++++ Message Read Pagen Style+++++++++++++++++
+	*************************************************************
+*/
+
+.message-read{
+	text-align: left;
+}
+
+/* **************************************************************
+   ++++++++++++++++++ Footer Style +++++++++++++++++++++++++++++
+   *************************************************************
+*/
+#footer .container{
+	text-align: center;
+}
+
+
+/*	===============================================================
+	*********************** Media Screen **************************
+	===============================================================
+*/
+@media screen and (max-width: 768px) {
+    .navbar-header{
+    	float: left;
+    	margin-left: 4px;
+    }
+
+    .nav.navbar-righ button.btn.btn-default.navbar-btn{
+    	float: right;
+    	margin: 0;
+    }
+    .nav.navbar-nav.navbar-right{
+    	float: right;
+    	padding: 0;
+    }
+
+    .navbar-btn{
+    	margin-top: 0;
+    	margin-bottom: 0;
+    }
+}

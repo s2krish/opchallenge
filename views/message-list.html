@@ -1,0 +1,47 @@
+<header id="header">
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#/">
+          <img alt="Brand" src="./assets/images/logo.png">
+        </a>
+      </div>
+    <div class="nav navbar-nav navbar-right">
+        <span ng-controller="MeCtrl">Welcome {{ user.first_name }}!</span>
+        <a class="btn btn-default navbar-btn" href="#user">User</a>
+        <a class="btn btn-default navbar-btn" href="#messages">Message</a>
+    </div>
+    </div>
+  </nav>
+</header>
+
+<div class="table-contain container-fuild" ng-controller="MessageListCtrl">
+
+    <div class="container table-body">
+    <h1>Messages</h1>
+    <div class="panel panel-default">
+
+      <!-- Table -->
+      <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Subject</th>
+                <th>Sent Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="message in messages">
+                <td><a href="#/message/{{ message.id }}">{{ message.subject }}</a></td>
+                <td>{{ message.sent_date | date:'yyyy-MM-dd HH:mm:ss Z' }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <pagination 
+      ng-model="currentPage"
+      total-items="user.length"
+      max-size="maxSize"  
+      boundary-links="true">
+    </pagination>
+    </div>
+  </div>
+</div>

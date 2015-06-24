@@ -1,0 +1,78 @@
+<header id="header">
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#/">
+          <img alt="Brand" src="./assets/images/logo.png">
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div class="signin container-fuild">
+    <div class="container login-form">
+        <div class="col-sm-5 login" ng-controller='LoginCtrl'>
+            <form novalidate class="form-horizontal">
+                <legend>Login</legend>
+                <div class="input-group">
+                    <span class="input-group-addon glyphicon glyphicon-user" id="sizing-addon2"></span>
+                    <input type="text" class="form-control" placeholder="Username or Email" aria-describedby="sizing-addon2" ng-model="user.user_name">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon glyphicon glyphicon-lock" id="sizing-addon2"></span>
+                    <input type="password" class="form-control" placeholder="Password" aria-describedby="sizing-addon2"  ng-model="user.password">
+                </div> 
+                
+                <div class="btn-group">
+                    <input type="submit" class="btn btn-primary" ng-click="login()" value="Login">
+                </div>
+                <div class="btn-group">
+                    <input type="reset" class="btn btn-default" ng-click="reset" value="Cancel">
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-7 register" ng-controller="SignupCtrl">
+        <div class="alert alert-success" ng-show="signed">You have successfully signed up. Please use your email and password to login.</div>
+        <div class="alert alert-danger" ng-show="failed">Some error occured. Please try signup with new email address</div>
+        <form class="form-horizontal" novalidate ng-hide="signed" name="signup">
+            <legend>Register</legend>
+            <div class="form-group">
+                <label for="inputEmail" class="control-label col-xs-3">Email</label>
+                <div class="col-xs-9">
+                    <input type="text" class="form-control" name="email" ng-model="user.email" placeholder="Email" required>
+                    
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputEmail" class="control-label col-xs-3">Password</label>
+                <div class="col-xs-9">
+                    <input type="password" class="form-control" name="password" ng-model="user.password" required>
+                    
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword" class="control-label col-xs-3">First Name</label>
+                <div class="col-xs-9">
+                    <input type="text" class="form-control" name="first_name" ng-model="user.first_name" placeholder="First Name" required>
+                    
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inputPassword" class="control-label col-xs-3">Last Name</label>
+                <div class="col-xs-9">
+                    <input type="text" class="form-control" name="last_name" ng-model="user.last_name" placeholder="Last Name" required>
+                    
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-offset-3 col-xs-9">
+                    <input type="submit" class="btn btn-primary" ng-click="signup()" value="Sign Up">
+                    <input type="submit" class="btn btn-default" ng-click="reset()" value="Reset">
+                </div>
+            </div>
+        </form>
+        </div>
+    </div>
+</div>
